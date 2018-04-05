@@ -1,0 +1,17 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.3",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.9",
+    "tether": "^1.4.0"
+  }
+}
