@@ -5,73 +5,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="theme.css" type="text/css"> </head>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href=="../app/index.css" type="text/css">
+</head>
 
 <body>
-    <div class="">
-        <div class="container">
-          <div class="row">
-            <ul class="nav nav-tabs">
-              <li class="nav-item" id="homeButton">
-                <a href="#" class="active nav-link"><i class="fa fa-home"></i>&nbsp;Home</a>
-              </li>
-              <div class="btn-group">
-                <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"> Going Somewhere? </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#" id="school">School</a>
-                  <a class="dropdown-item" href="#" id="gilroyHome">Gilroy</a>
-                  <a class="dropdown-item" href="#" id="lizHome"></a>
-                </div>
-              </div>
-              <li class="nav-item">
-                <a href="#" class="nav-link" id="dinnerMenu">Dinner Menu</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link" id="calander">Calander</a>
-              </li>
-              <li> </li>
-            </ul>
+  <div class="">
+    <div class="container">
+      <p style="float:right; font-size:2em" onclick="openSettings()">
+        <i class="fa fa-cog"></i>
+      </p>
+      <div class="row">
+        <ul class="nav nav-tabs">
+          <li class="nav-item" id="homeButton">
+            <a href="#" class="active nav-link">
+              <i class="fa fa-home"></i>&nbsp;Home</a>
+          </li>
+          <div class="btn-group">
+            <button class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown"> Going Somewhere? </button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item" onclick="showDirections(this)" id="school">School</button>
+              <button class="dropdown-item" onclick="showDirections(this)" id="gilroyHome">Gilroy</button>
+              <button class="dropdown-item" onclick="showDirections(this)" id="lizHome"></button>
+            </div>
           </div>
-        </div>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="dinnerMenu">Dinner Menu</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="calander">Calander</a>
+          </li>
+          <li> </li>
+        </ul>
       </div>
-      <div class="py-5">
-        <div class="container d-flex align-items-center h100">
-          <div class="row">
-            <div class="col-md-4 my-auto">
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container d-flex align-items-center">
+      <div class="row">
+        <div class="col-md-4 my-auto p-2">
+          <div class="py-5">
+            <div class="container">
               <img class="mx-auto d-block border border-dark float-left img-thumbnail img-fluid m-0 py-2 bg-dark" src="https://pingendo.com/assets/photos/wireframe/photo-1.jpg" id="songCover">
-              <div class="py-5">
-                <div class="container">
-                  <div class="row py-1 text-center border">
-                    <div class="col-sm-3 col-md-4">
-                      <button class="btn btn-large"> <i class="fa fa-fast-backward"></i> </button>
-                    </div>
-                    <div class="col-sm-3 col-md-4">
-                      <button class="btn btn-large"> <i class="fa fa-play"></i> </button>
-                    </div>
-                    <div class="col-sm-3 col-md-4">
-                      <button class="btn btn-large"> <i class="fa fa-fast-forward"></i> </button>
-                    </div>
-                  </div>
+              <div class="row py-1 text-center border">
+                <div class="col-sm-3 col-md-4">
+                  <button class="btn btn-large">
+                    <i class="fa fa-fast-backward"></i>
+                  </button>
+                </div>
+                <div class="col-sm-3 col-md-4">
+                  <button class="btn btn-large">
+                    <i class="fa fa-play"></i>
+                  </button>
+                </div>
+                <div class="col-sm-3 col-md-4">
+                  <button class="btn btn-large">
+                    <i class="fa fa-fast-forward"></i>
+                  </button>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 border border-dark my-auto">
-              <div class="">
-                <p id="middle" style="font-size: 40px; text-align:center; font-family:'Courier New', Courier, monospace" class="mx-auto"> 4/8/2018 10:02:24 PM </p>
-              </div>
-            </div>
-            <div class="col-md-4"></div>
           </div>
         </div>
+        <div class="col-md-4 border border-dark my-auto p-2">
+          <div class="">
+            <p id="middle" style="font-size: 40px; text-align:center; font-family:'Courier New', Courier, monospace" class="mx-auto"> 4/8/2018 10:02:24 PM </p>
+          </div>
+        </div>
+        <div class="col-md-4 p-2" id="right"></div>
       </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
   <script src="renderer.js"></script>
-  <script src = "index.js"></script>
-  
+  <script src="index.js"></script>
+
 </body>
 
 </html>
